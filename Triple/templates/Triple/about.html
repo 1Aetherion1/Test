@@ -1,19 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 
-
-{% block content %}
-{% include "include/cart_button.html" %}
-{% endblock %}
-
 {% block css %}
 <link rel="stylesheet" href="{% static 'deps/css/my_footer_css.css' %}">
 {% endblock %}
 
-
-
-<h1 class="mt-5 pt-5"><strong>{{ content }}</strong></h1>
-
+{% block content %}
+{% include "include/cart_button.html" %}
+<div class="mt-5 pt-5 bg-white custom-shadow rounded">
+    <h2 class="m-2"><strong>{{ content }}</strong></h2>
+    <p class="m-2">{{ text_on_page }}</p>
+</div>
+{% endblock %}
 
 {% block footer %}
 <footer class="py-4 bg-dark">

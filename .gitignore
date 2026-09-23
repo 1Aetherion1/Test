@@ -1,6 +1,12 @@
 .venv/
 __pycache__/
 *.pyc
+cache/
 db.sqlite3
 .env
 .idea/
+.env.*
+!.env.example
+media/users_images/
+*.bak
+goods_backup.json
