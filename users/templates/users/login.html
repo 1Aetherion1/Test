@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load socialaccount %}
 {% block content %}
 {% include "include/cart_button.html" %}
 
@@ -40,10 +40,15 @@
                                     <hr>
                                     <div class="text-center">
                                         <p>Или авторизуйтесь через:</p>
-                                        <a href="#" class="btn btn-dark">
-                                            <img class="mx-1" src="{% static "deps/icons/google.svg"%}" alt="Catalog Icon" width="16" height="16">
-                                            Google
-                                        </a>
+                                     <form method="post" action="{% provider_login_url 'google' %}" class="d-inline">
+                                     {% csrf_token %}
+                                    <button type="submit" class="btn btn-dark">
+                                    <img class="mx-1"
+                                    src="{% static 'deps/icons/google.svg' %}"
+                                   alt="Google" width="16" height="16">
+                                    Google
+                                  </button>
+                                   </form>
                                         <a href="#" class="btn btn-dark">
                                             <img class="mx-1" src="{% static "deps/icons/Facebook.svg"%}" alt="Catalog Icon" width="16" height="16">
                                             Facebook
